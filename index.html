@@ -69,9 +69,32 @@
         }
         
         h1 {
-            font-size: 3.8rem; /* Reduced from 5rem to 3.8rem */
+            font-size: 4.2rem;
             font-weight: 700;
             line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 1.5rem;
+            letter-spacing: 0.5px;
+            background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: -100% 0;
+            }
         }
         
         footer {
@@ -124,10 +147,8 @@
     <main>
         <div class="vertical-text left">SCROLL DOWN</div>
         <div class="hero">
-            <h1>Open</h1>
-            <h1>Makes</h1>
-            <h1>Finance</h1>
-            <h1>Better.</h1>
+            <h1>Open Makes Finance Better.</h1>
+            <div class="subtitle">Foundation Models for Financial Automation</div>
         </div>
         <div class="vertical-text right">SCROLL DOWN</div>
     </main>
