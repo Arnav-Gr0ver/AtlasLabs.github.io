@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AtlasLabs | Foundation Models for Finance</title>
+    <title>AtlasLabs | Emotional Intelligence Models</title>
     <style>
         * {
             margin: 0;
@@ -19,11 +19,15 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
         
-        header {
-            padding: 2rem 3rem;
+        /* Navbar */
+        nav {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .logo {
@@ -39,69 +43,355 @@
             font-weight: 400;
         }
         
-        main {
-            flex: 1;
+        .nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            gap: 2rem;
         }
         
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+        }
+        
+        .cta-button {
+            background-color: white;
+            color: black;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Hero Section */
         .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            padding: 8rem 2rem 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        .vertical-text {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            position: absolute;
-            opacity: 0.7;
-        }
-        
-        .vertical-text.left {
-            left: 3rem;
-        }
-        
-        .vertical-text.right {
-            right: 3rem;
-        }
-        
-        h1 {
+        .hero h1 {
             font-size: 4.2rem;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.1;
+            max-width: 800px;
         }
         
-        .subtitle {
+        .hero p {
             font-size: 1.4rem;
             font-weight: 400;
             margin-top: 1.5rem;
-            letter-spacing: 0.5px;
-            background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%);
-            background-size: 200% 100%;
-            background-position: 100% 0;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: shimmer 3s infinite;
+            max-width: 600px;
+            opacity: 0.8;
         }
         
-        @keyframes shimmer {
-            0% {
-                background-position: 100% 0;
-            }
-            100% {
-                background-position: -100% 0;
-            }
+        .social-proof {
+            margin-top: 3rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
+        .client-logo {
+            height: 2rem;
+            opacity: 0.6;
+            filter: brightness(0) invert(1);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 6rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            opacity: 0.7;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .steps {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            background-color: white;
+            color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step p {
+            opacity: 0.7;
+        }
+        
+        /* Applications Section */
+        .applications {
+            padding: 6rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .application-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .application-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .application-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .application-card p {
+            opacity: 0.7;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #333;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .testimonial-info span {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        .testimonial-rating {
+            margin-top: 1rem;
+            color: gold;
+            font-size: 1.2rem;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 2rem;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item p {
+            opacity: 0.7;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            padding: 8rem 3rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+        
+        .cta-button-large {
+            background-color: white;
+            color: black;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .cta-button-large:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Footer */
         footer {
-            padding: 2rem 3rem;
+            padding: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
         }
         
         .social-icons {
@@ -119,59 +409,219 @@
             text-decoration: none;
             font-size: 0.9rem;
             transition: opacity 0.2s ease;
+            opacity: 0.7;
         }
         
         .social-icon:hover {
-            opacity: 0.7;
+            opacity: 1;
         }
         
-        .contact-link {
-            color: white;
-            text-decoration: none;
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 3rem;
             font-size: 0.9rem;
-            transition: opacity 0.2s ease;
+            opacity: 0.5;
         }
         
-        .contact-link:hover {
-            opacity: 0.7;
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .features, .how-it-works, .applications, .testimonials, .faq {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 6rem 1.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navbar -->
+    <nav>
         <div class="logo">
             <span class="logo-bold">Atlas</span><span class="logo-regular">Labs</span>
         </div>
-    </header>
-    
-    <main>
-        <div class="vertical-text left">SCROLL DOWN</div>
-        <div class="hero">
-            <h1>Open Makes Finance Better.</h1>
-            <div class="subtitle">Foundation Models for Financial Automation</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#applications">Applications</a>
+            <a href="#faq">FAQ</a>
         </div>
-        <div class="vertical-text right">SCROLL DOWN</div>
-    </main>
+        <a href="#demo" class="cta-button">Request Demo</a>
+    </nav>
     
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Making AI Emotionally Intelligent.</h1>
+        <p>Foundation Models for Detecting Facial Expressions, Tonality, and Emotional Context</p>
+        <div class="social-proof">
+            <img src="/api/placeholder/120/40" alt="Client Logo" class="client-logo">
+            <img src="/api/placeholder/120/40" alt="Client Logo" class="client-logo">
+            <img src="/api/placeholder/120/40" alt="Client Logo" class="client-logo">
+            <img src="/api/placeholder/120/40" alt="Client Logo" class="client-logo">
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Facial Expression Recognition</h3>
+                <p>Our models detect and analyze micro-expressions with over 97% accuracy across diverse populations.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Speech Tone Analysis</h3>
+                <p>Identify emotional cues in speech patterns, including stress, excitement, hesitation, and confidence.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Text Sentiment Processing</h3>
+                <p>Extract emotional context from written communication with nuanced understanding beyond basic sentiment.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Multimodal Integration</h3>
+                <p>Combine facial, vocal, and textual data for comprehensive emotional intelligence assessment.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">How It Works in 3 Steps</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Data Collection</h3>
+                <p>Our APIs easily integrate with your existing systems to collect facial, vocal, or text data.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Emotional Analysis</h3>
+                <p>Our foundation models process the data in real-time, detecting emotional signals with high precision.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Actionable Insights</h3>
+                <p>Receive structured emotional intelligence data to enhance your product or decision-making process.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Applications Section -->
+    <section class="applications" id="applications">
+        <h2 class="section-title">Applications</h2>
+        <div class="applications-grid">
+            <div class="application-card">
+                <h3>Finance</h3>
+                <p>Analyze emotional cues during investment pitches, trading decisions, or client interactions to enhance risk assessment and decision-making.</p>
+            </div>
+            <div class="application-card">
+                <h3>Healthcare</h3>
+                <p>Monitor patient emotional states for early detection of mental health issues, improved diagnosis, and personalized care plans.</p>
+            </div>
+            <div class="application-card">
+                <h3>Customer Service</h3>
+                <p>Enhance virtual assistants and support systems with emotional intelligence to provide more empathetic and effective responses.</p>
+            </div>
+            <div class="application-card">
+                <h3>Education</h3>
+                <p>Track student engagement and emotional responses to optimize learning experiences and identify intervention opportunities.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How accurate are your emotion recognition models?</h3>
+            <p>Our models achieve 97%+ accuracy for facial expression recognition, 94% for speech tone analysis, and 91% for text sentiment processing across diverse populations and contexts.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do you ensure privacy and ethical use?</h3>
+            <p>We prioritize privacy with edge computing options, strong encryption, anonymous processing modes, and transparent data policies. We also provide ethical use guidelines and regular audits.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can the models be customized for our specific use case?</h3>
+            <p>Yes, we offer fine-tuning services to adapt our foundation models to your specific industry, audience, or use case requirements.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What integration options are available?</h3>
+            <p>We provide REST APIs, SDKs for major programming languages, and pre-built components for popular frameworks to make integration seamless.</p>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="cta-section" id="demo">
+        <h2>Ready to Make Your Systems Emotionally Intelligent?</h2>
+        <p>Join leading companies already using AtlasLabs to enhance their products with emotional intelligence.</p>
+        <a href="#contact" class="cta-button-large">Request Demo</a>
+    </section>
+    
+    <!-- Footer -->
     <footer>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/arnav-gr0ver/" class="social-icon" target="_blank" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                </svg>
-            </a>
-            <a href="https://x.com/Arnav_Gr0ver" class="social-icon" target="_blank" aria-label="X (formerly Twitter)">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
-                </svg>
-            </a>
-            <a href="https://discord.gg/hWWdnxpx" class="social-icon" target="_blank" aria-label="Discord">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
-                </svg>
-            </a>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-bold">Atlas</span><span class="logo-regular">Labs</span>
+            </div>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#applications">Applications</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arnav-gr0ver/" class="social-icon" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/Arnav_Gr0ver" class="social-icon" target="_blank" aria-label="X (formerly Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+                    </svg>
+                </a>
+                <a href="https://discord.gg/hWWdnxpx" class="social-icon" target="_blank" aria-label="Discord">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <a href="mailto:grover41@purdue.edu" class="contact-link">Contact us</a>
+        <div class="copyright">
+            © 2025 AtlasLabs. All rights reserved.
+        </div>
     </footer>
 </body>
 </html>
